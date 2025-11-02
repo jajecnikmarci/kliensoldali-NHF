@@ -1,0 +1,18 @@
+Recept App Specifikáció - Összefoglaló
+A Recept App egy React és TypeScript alapú webalkalmazás, amely lehetővé teszi a felhasználók számára saját receptjeik gyűjtését, kezelését és szervezését intuitív felületen keresztül.
+
+Az alkalmazás teljes CRUD funkcionalitást biztosít: receptek létrehozása (név, kategória, hozzávalók, lépések, idő, nehézség), listázása, részletes megtekintése, szerkesztése és törlése.
+
+Fejlett szűrési és keresési lehetőségek állnak rendelkezésre kategória szerinti szűréssel, név alapú kereséssel és többféle rendezési opcióval (név, idő, dátum szerint).
+
+Bevásárlólista funkció segíti a felhasználókat: a receptekből közvetlenül hozzáadhatók a hozzávalók a bevásárlólistához, amelyen az elemek kipipálhatók.
+
+A kedvencek kezelése külön nézetet biztosít a gyakran használt receptek gyors eléréséhez, egyszerű hozzáadással és eltávolítással.
+
+Minimum 17 komponensből áll a jól strukturált alkalmazás, logikus mapparendszerben szervezve (common, recipes, shopping, favorites).
+
+Hat különböző hook típust használ: useState, useEffect, useContext, useRef, useMemo, valamint egy egyedi useLocalStorage hookot az optimális React fejlesztési gyakorlatokhoz.
+
+Local Storage biztosítja az adatperzisztenciát, így a receptek, bevásárlólista és kedvencek megmaradnak böngésző újraindítás után is, opcionálisan fetch API-val külső recept adatbázisokhoz is csatlakozhat.
+
+Material Design irányelveket követ responsív dizájnnal, ikonokkal, megfelelő kontrasztokkal és ergonómiai szempontokkal (min. 44x44px gombok, visszajelzések, hibakezelés).
