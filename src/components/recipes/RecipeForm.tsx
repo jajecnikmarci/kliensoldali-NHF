@@ -10,7 +10,6 @@ import {
   IconButton,
   List,
   ListItem,
-  ListItemText,
   Typography,
   Grid,
 } from '@mui/material';

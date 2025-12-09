@@ -29,6 +29,8 @@
 
 A Recipe App egy teljes funkcionalitású webes alkalmazás receptek kezeléséhez. Lehetővé teszi receptek létrehozását, szerkesztését, törlését, keresését és szűrését. Beépített bevásárlólista funkcióval rendelkezik, amely megkönnyíti a bevásárlást, valamint kedvencek kezelést biztosít a gyakran használt receptek gyors eléréséhez.
 
+Elérhető github pages-en: https://jajecnikmarci.github.io/kliensoldali-NHF/
+
 ### Kulcs Jellemzők
 
 - 📝 **Teljes CRUD műveletek** receptekhez

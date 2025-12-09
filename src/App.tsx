@@ -23,7 +23,6 @@ const AppContent: React.FC = () => {
     addRecipe,
     updateRecipe,
     deleteRecipe,
-    getRecipe,
     shoppingList,
     setShoppingList,
     addToShoppingList,
