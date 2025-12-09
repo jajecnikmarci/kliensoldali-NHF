@@ -563,46 +563,6 @@ graph TB
 
 ## 🛠️ Technológiai Stack
 
-### Frontend Framework
-
-```mermaid
-graph TB
-    subgraph Stack["Technology Stack"]
-        subgraph Core
-            React["React 19.2.0"]
-            TS["TypeScript 5.9.3"]
-        end
-        
-        subgraph Build["Build Tool"]
-            Vite["Vite 7.2.4"]
-        end
-        
-        subgraph UI["UI Framework"]
-            MUI["Material-UI 5.18.0"]
-            Icons["@mui/icons-material"]
-            Emotion["@emotion/react"]
-        end
-        
-        subgraph State["State & Storage"]
-            Context["Context API"]
-            Storage["Local Storage API"]
-        end
-        
-        subgraph Dev["Development"]
-            Lint["ESLint"]
-            TSLint["TypeScript ESLint"]
-        end
-    end
-    
-    React -.typed with.-> TS
-    Vite -.builds.-> React
-    React -.styled with.-> MUI
-    MUI -.uses.-> Icons
-    MUI -.powered by.-> Emotion
-    React -.state management.-> Context
-    Context -.persists to.-> Storage
-```
-
 ### Hook Használat
 
 Az alkalmazás **7 különböző hook típust** használ:
