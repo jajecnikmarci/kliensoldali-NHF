@@ -7,12 +7,12 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  Grid,
   IconButton,
   List,
   ListItem,
   ListItemText,
   Typography,
+  Grid,
 } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
@@ -204,7 +204,7 @@ export const RecipeForm: React.FC<RecipeFormProps> = ({
         />
 
         <Grid container spacing={2}>
-          <Grid xs={12} sm={4}>
+          <Grid item xs={12} sm={4}>
             <FormControl fullWidth>
               <InputLabel>Kategória</InputLabel>
               <Select
@@ -221,7 +221,7 @@ export const RecipeForm: React.FC<RecipeFormProps> = ({
             </FormControl>
           </Grid>
 
-          <Grid xs={12} sm={4}>
+          <Grid item xs={12} sm={4}>
             <FormControl fullWidth>
               <InputLabel>Nehézség</InputLabel>
               <Select
@@ -238,7 +238,7 @@ export const RecipeForm: React.FC<RecipeFormProps> = ({
             </FormControl>
           </Grid>
 
-          <Grid xs={12} sm={4}>
+          <Grid item xs={12} sm={4}>
             <TextField
               label="Előkészítés (perc)"
               type="number"
@@ -251,7 +251,7 @@ export const RecipeForm: React.FC<RecipeFormProps> = ({
             />
           </Grid>
 
-          <Grid xs={12} sm={4}>
+          <Grid item xs={12} sm={4}>
             <TextField
               label="Főzési idő (perc)"
               type="number"
@@ -337,21 +337,20 @@ export const RecipeForm: React.FC<RecipeFormProps> = ({
                   )
                 }
               >
-                <ListItemText
-                  primary={`${index + 1}. lépés`}
-                  secondary={
-                    <TextField
-                      fullWidth
-                      multiline
-                      rows={2}
-                      value={step}
-                      onChange={(e) => updateStep(index, e.target.value)}
-                      placeholder="Leírás..."
-                      size="small"
-                      sx={{ mt: 1 }}
-                    />
-                  }
-                />
+                <Box sx={{ flex: 1 }}>
+                  <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                    {index + 1}. lépés
+                  </Typography>
+                  <TextField
+                    fullWidth
+                    multiline
+                    rows={2}
+                    value={step}
+                    onChange={(e) => updateStep(index, e.target.value)}
+                    placeholder="Leírás..."
+                    size="small"
+                  />
+                </Box>
               </ListItem>
             ))}
           </List>

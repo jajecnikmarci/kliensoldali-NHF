@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { TextField, InputAdornment } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
@@ -20,6 +20,15 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   onChange, 
   placeholder = 'Recept keresése...' 
 }) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  // Focus input on mount for better UX
+  useEffect(() => {
+    if (inputRef.current && !value) {
+      inputRef.current.focus();
+    }
+  }, [value]);
+
   return (
     <TextField
       fullWidth
@@ -28,6 +37,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
       placeholder={placeholder}
       variant="outlined"
       size="small"
+      inputRef={inputRef}
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">

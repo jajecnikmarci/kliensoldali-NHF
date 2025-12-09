@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography, Box } from '@mui/material';
+import { Typography, Box, Grid } from '@mui/material';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import type { Recipe } from '../../types';
 import { RecipeCard } from '../recipes/RecipeCard';
@@ -58,7 +58,7 @@ export const FavoritesList: React.FC<FavoritesListProps> = ({
       </Typography>
       <Grid container spacing={2}>
         {recipes.map((recipe) => (
-          <Grid xs={12} sm={6} md={4} key={recipe.id}>
+          <Grid item xs={12} sm={6} md={4} key={recipe.id}>
             <RecipeCard
               recipe={recipe}
               isFavorite={true}

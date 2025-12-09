@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Grid, Box, Fab, Typography } from '@mui/material';
+import { Box, Fab, Typography, Grid } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import type { Recipe, Category, SortOption } from '../../types';
 import { RecipeCard } from './RecipeCard';
@@ -97,7 +97,7 @@ export const RecipeList: React.FC<RecipeListProps> = ({
       ) : (
         <Grid container spacing={2}>
           {filteredRecipes.map((recipe) => (
-            <Grid xs={12} sm={6} md={4} key={recipe.id}>
+            <Grid item xs={12} sm={6} md={4} key={recipe.id}>
               <RecipeCard
                 recipe={recipe}
                 isFavorite={favorites.has(recipe.id)}

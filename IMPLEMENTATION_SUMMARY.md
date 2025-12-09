@@ -35,11 +35,11 @@
 ## Hook típusok használata: 6+
 
 1. **useState** - Állapotkezelés (minden komponensben)
-2. **useEffect** - Mellékhatások kezelése (RecipeForm, useLocalStorage)
+2. **useEffect** - Mellékhatások kezelése (RecipeForm, SearchBar, useLocalStorage)
 3. **useContext** - Context elérése (useRecipes hook)
-4. **useMemo** - Teljesítmény optimalizálás (RecipeList, App, RecipeContext)
-5. **useCallback** - Függvény memorizálás (RecipeContext, RecipeForm)
-6. **useRef** - Potenciálisan használható további fejlesztésekhez
+4. **useRef** - DOM referencia (SearchBar input fókusz)
+5. **useMemo** - Teljesítmény optimalizálás (RecipeList, App, RecipeContext)
+6. **useCallback** - Függvény memorizálás (RecipeContext, RecipeForm)
 7. **useLocalStorage** - Egyedi hook (Local Storage integráció)
 
 ## JavaScript API-k használata: 2
