@@ -755,7 +755,7 @@ graph LR
 
 ## 👨‍💻 Fejlesztő
 
-**Kliensoldali Házi Feladat - 2024/2025**
+**Kliensoldali Házi Feladat - 2025/2026 ősz**
 
 Készítette: Jajecnik Marcell
 
