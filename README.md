@@ -753,29 +753,6 @@ graph LR
 
 ---
 
-## 🚀 Performance Optimizations
-
-### Implemented Optimizations
-
-**Performance Features:**
-
-- **useMemo** ✅
-  - Filtered recipe list
-  - Favorite recipes
-  - Search results
-
-- **useCallback** ✅
-  - Event handlers
-  - CRUD operations
-  - Context functions
-
-- **State Management** ✅
-  - Context optimization
-  - Minimal re-renders
-  - Memoized values
-
----
-
 ## 👨‍💻 Fejlesztő
 
 **Kliensoldali Házi Feladat - 2024/2025**
