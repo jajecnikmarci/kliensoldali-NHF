@@ -307,21 +307,78 @@ flowchart TD
 ### Use Case Diagram
 
 ```mermaid
-flowchart TD
-    User([User])
+flowchart TB
+    User([👤 Felhasználó])
     
-    User --> UC1[Recept Létrehozás]
-    User --> UC2[Recept Szerkesztés]
-    User --> UC3[Recept Törlés]
-    User --> UC4[Recept Megtekintés]
-    User --> UC5[Recept Keresés]
-    User --> UC6[Szűrés Kategória Szerint]
-    User --> UC7[Rendezés]
-    User --> UC8[Bevásárlólista Kezelés]
-    User --> UC9[Elem Kipipálás]
-    User --> UC10[Kipipáltak Törlése]
-    User --> UC11[Kedvencekhez Adás]
-    User --> UC12[Kedvencek Megtekintés]
+    subgraph RecipeManagement["📝 Recept Kezelés"]
+        UC1[Új Recept Létrehozás]
+        UC2[Recept Szerkesztés]
+        UC3[Recept Törlés]
+        UC4[Recept Részleteinek Megtekintés]
+    end
+    
+    subgraph Search["🔍 Keresés & Szűrés"]
+        UC5[Keresés Név Alapján]
+        UC6[Szűrés Kategória Szerint]
+        UC7[Rendezés]
+        UC13[Találatok Megjelenítése]
+    end
+    
+    subgraph Shopping["🛒 Bevásárlólista"]
+        UC8[Hozzávalók Hozzáadása Listához]
+        UC9[Egyedi Elem Hozzáadás]
+        UC10[Elem Kipipálása]
+        UC11[Kipipáltak Törlése]
+        UC14[Lista Megtekintése]
+    end
+    
+    subgraph Favorites["⭐ Kedvencek"]
+        UC12[Recept Kedvencekhez Adás]
+        UC15[Recept Eltávolítása Kedvencekből]
+        UC16[Kedvencek Listájának Megtekintése]
+    end
+    
+    subgraph Storage["💾 Adatkezelés"]
+        UC17[Adatok Mentése Local Storage-ba]
+        UC18[Adatok Betöltése]
+        UC19[Cross-tab Szinkronizáció]
+    end
+    
+    %% User interactions
+    User --> UC1
+    User --> UC2
+    User --> UC3
+    User --> UC4
+    User --> UC5
+    User --> UC6
+    User --> UC7
+    User --> UC8
+    User --> UC9
+    User --> UC10
+    User --> UC11
+    User --> UC12
+    User --> UC15
+    User --> UC14
+    User --> UC16
+    
+    %% Dependencies
+    UC1 -.->|mentés| UC17
+    UC2 -.->|mentés| UC17
+    UC3 -.->|mentés| UC17
+    UC8 -.->|használja| UC4
+    UC12 -.->|használja| UC4
+    UC5 -.->|eredmény| UC13
+    UC6 -.->|eredmény| UC13
+    UC7 -.->|eredmény| UC13
+    UC17 -.->|triggerel| UC19
+    
+    %% Styling
+    style User fill:#1976d2,stroke:#0d47a1,stroke-width:3px,color:#fff
+    style RecipeManagement fill:#388e3c,stroke:#1b5e20,stroke-width:2px,color:#fff
+    style Search fill:#f57c00,stroke:#e65100,stroke-width:2px,color:#fff
+    style Shopping fill:#7b1fa2,stroke:#4a148c,stroke-width:2px,color:#fff
+    style Favorites fill:#c2185b,stroke:#880e4f,stroke-width:2px,color:#fff
+    style Storage fill:#0097a7,stroke:#006064,stroke-width:2px,color:#fff
 ```
 
 ### Recept Létrehozása - Activity Diagram
