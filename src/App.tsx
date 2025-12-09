@@ -25,6 +25,7 @@ const AppContent: React.FC = () => {
     deleteRecipe,
     getRecipe,
     shoppingList,
+    setShoppingList,
     addToShoppingList,
     removeFromShoppingList,
     toggleShoppingItem,
@@ -71,7 +72,12 @@ const AppContent: React.FC = () => {
    * Handle adding ingredients to shopping list
    */
   const handleAddToShoppingList = (ingredients: string[]) => {
-    ingredients.forEach((ingredient) => addToShoppingList(ingredient));
+    const newItems = ingredients.map(ingredient => ({
+      id: crypto.randomUUID(),
+      name: ingredient,
+      checked: false,
+    }));
+    setShoppingList(prev => [...prev, ...newItems]);
     showFeedback('Hozzávalók hozzáadva a bevásárlólistához!', 'success');
     setDetailOpen(false);
   };

@@ -20,6 +20,8 @@ export interface RecipeContextValue {
   
   /** Shopping list items */
   shoppingList: ShoppingItem[];
+  /** Set shopping list directly */
+  setShoppingList: React.Dispatch<React.SetStateAction<ShoppingItem[]>>;
   /** Add item to shopping list */
   addToShoppingList: (name: string) => void;
   /** Remove item from shopping list */
@@ -149,6 +151,7 @@ export const RecipeProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     deleteRecipe,
     getRecipe,
     shoppingList,
+    setShoppingList,
     addToShoppingList,
     removeFromShoppingList,
     toggleShoppingItem,
@@ -164,6 +167,7 @@ export const RecipeProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     deleteRecipe,
     getRecipe,
     shoppingList,
+    setShoppingList,
     addToShoppingList,
     removeFromShoppingList,
     toggleShoppingItem,
