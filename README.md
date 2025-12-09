@@ -86,7 +86,7 @@ flowchart TD
     Navigation[Navigation]
     SearchBar[SearchBar]
     FilterBar[FilterBar]
-    Modal[Modal]
+    Model[Model]
     Feedback[Feedback]
     
     RecipeList[RecipeList]
@@ -123,9 +123,11 @@ flowchart TD
     FavoritesList -.-> useRecipes
     useRecipes --> Context
     
-    style App fill:#bbdefb
-    style Context fill:#c8e6c9
-    style LS fill:#fff9c4
+    style App fill:#1976d2,stroke:#0d47a1,stroke-width:2px,color:#fff
+    style Context fill:#388e3c,stroke:#1b5e20,stroke-width:2px,color:#fff
+    style LS fill:#f57c00,stroke:#e65100,stroke-width:2px,color:#fff
+    style useLocalStorage fill:#7b1fa2,stroke:#4a148c,stroke-width:2px,color:#fff
+    style useRecipes fill:#c2185b,stroke:#880e4f,stroke-width:2px,color:#fff
 ```
 
 ---
@@ -147,7 +149,7 @@ flowchart TD
     AppContent --> RecipeView[Recipe View]
     AppContent --> ShoppingView[Shopping View]
     AppContent --> FavView[Favorites View]
-    AppContent --> Modals
+    AppContent --> Models
     
     RecipeView --> SearchBar
     RecipeView --> FilterBar
@@ -157,15 +159,15 @@ flowchart TD
     ShoppingView --> ShoppingList
     FavView --> FavoritesList
     
-    Modals --> RecipeDetail
-    Modals --> RecipeForm
-    Modals --> DeleteDialog
+    Models --> RecipeDetail
+    Models --> RecipeForm
+    Models --> DeleteDialog
     
-    style App fill:#bbdefb
-    style Provider fill:#c8e6c9
-    style RecipeView fill:#fff9c4
-    style ShoppingView fill:#fff9c4
-    style FavView fill:#fff9c4
+    style App fill:#1976d2,stroke:#0d47a1,stroke-width:2px,color:#fff
+    style Provider fill:#388e3c,stroke:#1b5e20,stroke-width:2px,color:#fff
+    style RecipeView fill:#f57c00,stroke:#e65100,stroke-width:2px,color:#fff
+    style ShoppingView fill:#7b1fa2,stroke:#4a148c,stroke-width:2px,color:#fff
+    style FavView fill:#c2185b,stroke:#880e4f,stroke-width:2px,color:#fff
 ```
 
 ---
@@ -342,8 +344,8 @@ flowchart TD
     CheckValid -->|Yes| SaveContext[Mentés Context-be]
     SaveContext --> SaveStorage[Mentés Local Storage-ba]
     SaveStorage --> ShowSuccess[Sikeres visszajelzés]
-    ShowSuccess --> CloseModal[Modal bezárása]
-    CloseModal --> End([End])
+    ShowSuccess --> CloseModel[Model bezárása]
+    CloseModel --> End([End])
 ```
 
 ### Bevásárlólista Folyamat
@@ -428,7 +430,7 @@ kliensoldali-NHF/
 │   │   │   ├── Navigation.tsx
 │   │   │   ├── SearchBar.tsx
 │   │   │   ├── FilterBar.tsx
-│   │   │   ├── Modal.tsx
+│   │   │   ├── Model.tsx
 │   │   │   └── Feedback.tsx
 │   │   ├── recipes/         # Recept komponensek
 │   │   │   ├── RecipeCard.tsx
@@ -465,7 +467,7 @@ graph TB
         Navigation["Navigation - Nézetek közötti váltás"]
         SearchBar["SearchBar - Keresési input"]
         FilterBar["FilterBar - Szűrő kontrollok"]
-        Modal["Modal - Újrafelhasználható modal"]
+        Model["Model - Újrafelhasználható model"]
         Feedback["Feedback - Snackbar értesítések"]
     end
     
@@ -559,13 +561,13 @@ flowchart LR
     useLS["useLocalStorage
     Custom hook"]
     
-    style useState fill:#e3f2fd
-    style useEffect fill:#f3e5f5
-    style useContext fill:#e8f5e9
-    style useRef fill:#fff3e0
-    style useMemo fill:#fce4ec
-    style useCallback fill:#e0f2f1
-    style useLS fill:#fff9c4
+    style useState fill:#1976d2,stroke:#0d47a1,stroke-width:2px,color:#fff
+    style useEffect fill:#7b1fa2,stroke:#4a148c,stroke-width:2px,color:#fff
+    style useContext fill:#388e3c,stroke:#1b5e20,stroke-width:2px,color:#fff
+    style useRef fill:#f57c00,stroke:#e65100,stroke-width:2px,color:#fff
+    style useMemo fill:#c2185b,stroke:#880e4f,stroke-width:2px,color:#fff
+    style useCallback fill:#0097a7,stroke:#006064,stroke-width:2px,color:#fff
+    style useLS fill:#fbc02d,stroke:#f57f17,stroke-width:2px,color:#000
 ```
 
 ---
@@ -614,11 +616,11 @@ flowchart LR
     ✅ Cross-tab
     ✅ Auto-save"]
     
-    style CRUD fill:#c8e6c9
-    style Search fill:#c8e6c9
-    style Shop fill:#c8e6c9
-    style Fav fill:#c8e6c9
-    style Persist fill:#c8e6c9
+    style CRUD fill:#388e3c,stroke:#1b5e20,stroke-width:2px,color:#fff
+    style Search fill:#1976d2,stroke:#0d47a1,stroke-width:2px,color:#fff
+    style Shop fill:#f57c00,stroke:#e65100,stroke-width:2px,color:#fff
+    style Fav fill:#c2185b,stroke:#880e4f,stroke-width:2px,color:#fff
+    style Persist fill:#7b1fa2,stroke:#4a148c,stroke-width:2px,color:#fff
 ```
 
 ### Komplexitás Elemzés (5/5)
@@ -631,7 +633,7 @@ flowchart LR
 ✓ Navigation.tsx
 ✓ SearchBar.tsx
 ✓ FilterBar.tsx
-✓ Modal.tsx
+✓ Model.tsx
 ✓ Feedback.tsx
 ✓ RecipeCard.tsx
 ✓ RecipeList.tsx
@@ -809,29 +811,9 @@ graph TB
 
 ---
 
-## 📄 License
-
-MIT License - lásd a LICENSE fájlt részletekért.
-
----
-
 ## 👨‍💻 Fejlesztő
 
 **Kliensoldali Házi Feladat - 2024/2025**
 
-Készítette: [Your Name]  
+Készítette: Jajecnik Marcell
 Tantárgy: Kliensoldali Webprogramozás  
-Oktatók: Rajacsics Tamás és gyakorlatvezetők
-
----
-
-## 📞 Kapcsolat & Support
-
-Ha kérdésed van az alkalmazással kapcsolatban:
-- 📧 Email: [your-email]
-- 🐛 Issues: [GitHub Issues](https://github.com/your-username/kliensoldali-NHF/issues)
-- 📖 Dokumentáció: Ez a README
-
----
-
-**⭐ Ha tetszett az alkalmazás, adj egy csillagot a GitHub-on!**
