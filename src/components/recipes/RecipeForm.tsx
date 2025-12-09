@@ -75,6 +75,7 @@ export const RecipeForm: React.FC<RecipeFormProps> = ({
   }, []);
 
   // Populate form when editing existing recipe
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (recipe) {
       setName(recipe.name);
