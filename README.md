@@ -88,7 +88,7 @@ flowchart TD
     Navigation[Navigation]
     SearchBar[SearchBar]
     FilterBar[FilterBar]
-    Model[Model]
+    Modal[Modal]
     Feedback[Feedback]
     
     RecipeList[RecipeList]
@@ -151,7 +151,7 @@ flowchart TD
     AppContent --> RecipeView[Recipe View]
     AppContent --> ShoppingView[Shopping View]
     AppContent --> FavView[Favorites View]
-    AppContent --> Models
+    AppContent --> Modals
     
     RecipeView --> SearchBar
     RecipeView --> FilterBar
@@ -161,9 +161,9 @@ flowchart TD
     ShoppingView --> ShoppingList
     FavView --> FavoritesList
     
-    Models --> RecipeDetail
-    Models --> RecipeForm
-    Models --> DeleteDialog
+    Modals --> RecipeDetail
+    Modals --> RecipeForm
+    Modals --> DeleteDialog
     
     style App fill:#1976d2,stroke:#0d47a1,stroke-width:2px,color:#fff
     style Provider fill:#388e3c,stroke:#1b5e20,stroke-width:2px,color:#fff
@@ -403,8 +403,8 @@ flowchart TD
     CheckValid -->|Yes| SaveContext[Mentés Context-be]
     SaveContext --> SaveStorage[Mentés Local Storage-ba]
     SaveStorage --> ShowSuccess[Sikeres visszajelzés]
-    ShowSuccess --> CloseModel[Model bezárása]
-    CloseModel --> End([End])
+    ShowSuccess --> CloseModal[Modal bezárása]
+    CloseModal --> End([End])
 ```
 
 ### Bevásárlólista Folyamat
@@ -489,7 +489,7 @@ kliensoldali-NHF/
 │   │   │   ├── Navigation.tsx
 │   │   │   ├── SearchBar.tsx
 │   │   │   ├── FilterBar.tsx
-│   │   │   ├── Model.tsx
+│   │   │   ├── Modal.tsx
 │   │   │   └── Feedback.tsx
 │   │   ├── recipes/         # Recept komponensek
 │   │   │   ├── RecipeCard.tsx
@@ -526,7 +526,7 @@ graph TB
         Navigation["Navigation<br/>Nézetek közötti váltás"]
         SearchBar["SearchBar<br/>Keresési input"]
         FilterBar["FilterBar<br/>Szűrő kontrollok"]
-        Model["Model<br/>Újrafelhasználható model"]
+        Modal["Modal<br/>Újrafelhasználható modal"]
         Feedback["Feedback<br/>Snackbar értesítések"]
     end
     
@@ -549,7 +549,7 @@ graph TB
     style Navigation fill:#37474f,stroke:#263238,stroke-width:2px,color:#fff
     style SearchBar fill:#37474f,stroke:#263238,stroke-width:2px,color:#fff
     style FilterBar fill:#37474f,stroke:#263238,stroke-width:2px,color:#fff
-    style Model fill:#37474f,stroke:#263238,stroke-width:2px,color:#fff
+    style Modal fill:#37474f,stroke:#263238,stroke-width:2px,color:#fff
     style Feedback fill:#37474f,stroke:#263238,stroke-width:2px,color:#fff
     style RecipeCard fill:#1565c0,stroke:#0d47a1,stroke-width:2px,color:#fff
     style RecipeList fill:#1565c0,stroke:#0d47a1,stroke-width:2px,color:#fff
@@ -818,8 +818,8 @@ graph LR
 
 ## 👨‍💻 Fejlesztő
 
-**Kliensoldali Házi Feladat - 2025/2026 ősz**
+**Kliensoldali Házi Feladat - 2024/2025**
 
 Készítette: Jajecnik Marcell
 
-Tantárgy: Kliensoldali Webprogramozás  
+Tantárgy: Kliensoldali rendszerek - BMEVIAUAC17
