@@ -760,3 +760,5 @@ graph LR
 Készítette: Jajecnik Marcell
 
 Tantárgy: Kliensoldali rendszerek - BMEVIAUAC17
+
+Kommentek formázása Github Copilot segítségével (Promt: Formázd meg kérlek a #README.md fájlt)
